@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+}
+/* menu hamburger */
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-dark;
+}
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+/* fixed navbar */
+.navbar-fixed {
+  @apply fixed z-[999] bg-white bg-opacity-70 backdrop-blur-sm shadow-md;
+}
+.card:hover .hidden-card {
+  @apply inline transition duration-300 ease-in-out;
+}
+.accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+.accordion:hover {
+  @apply bg-dark text-white;
+}
+.panel {
+  @apply rounded-b-lg;
+  transform: translateY(-10px);
+  padding: 0 18px 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+  content: url(./image/arrow/btn_arrow_down.png); /* Unicode character for "plus" sign (+) */
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: url(./image/arrow/btn_arrow_up.png); /* Unicode character for "minus" sign (-) */
+}
+
